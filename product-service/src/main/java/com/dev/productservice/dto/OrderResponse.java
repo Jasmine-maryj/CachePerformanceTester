@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class ProductDto {
+public class OrderResponse {
     private String name;
     private double price;
     private long quantity;
+    private OrderStatus orderStatus;
 }

@@ -1,5 +1,6 @@
 package com.dev.productservice.controller;
 
+import com.dev.productservice.dto.OrderResponse;
 import com.dev.productservice.dto.ProductDto;
 import com.dev.productservice.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/products")
@@ -32,5 +34,16 @@ public class ProductController {
     public ResponseEntity<ProductDto> getProductById(@PathVariable long id){
         ProductDto productDto = productService.getProductById(id);
         return ResponseEntity.ok(productDto);
+    }
+
+    @GetMapping("/{id}/order")
+    public ResponseEntity<Map<String, String>> placeOrder(@PathVariable long id){
+        Map<String, String> map = productService.placeOrder(id);
+        return ResponseEntity.ok(map);
+    }
+
+    @GetMapping("/{orderNumber}/order-item")
+    public ResponseEntity<OrderResponse> getProductByOrderNUmber(@PathVariable String orderNumber){
+        return ResponseEntity.ok(productService.getProductByOrderNumber(orderNumber));
     }
 }

@@ -1,4 +1,4 @@
-package com.dev.productservice.dto;
+package com.dev.orderservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class ProductDto {
+public class OrderResponse {
     private String name;
     private double price;
     private long quantity;
+    private OrderStatus orderStatus;
 }
