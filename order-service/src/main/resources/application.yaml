@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ORDER-SERVICE
+    name: order-service
   datasource:
     url: jdbc:mysql://localhost:3306/order-db
     username: root

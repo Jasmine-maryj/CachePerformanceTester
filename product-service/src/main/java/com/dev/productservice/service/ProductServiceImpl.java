@@ -19,7 +19,7 @@ import java.util.Map;
 @Slf4j
 public class ProductServiceImpl implements ProductService{
 
-    private static final String ORDER_SERVICE = "http://localhost:8082/api/v1/orders";
+    private static final String ORDER_SERVICE = "http://localhost:8080/api/v1/orders";
 
     @Autowired
     private ProductRepository productRepository;
